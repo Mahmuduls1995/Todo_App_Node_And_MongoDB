@@ -107,3 +107,10 @@ input[type="text"]:focus {
   border-radius: 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.301);
 }
+
+footer{
+  text-align: center;
+  margin-top: 70px;
+ 
+ 
+}
