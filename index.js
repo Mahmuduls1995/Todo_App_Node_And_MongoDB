@@ -35,29 +35,6 @@ app.get("/", function (req, res) {
   });
 });
 
-app.post("/", function (req, res) {
-  const taskName = req.body.newTask;
-  if (taskName) {
-    const task = new Task({
-      name: taskName,
-    });
-    task.save().then(() => {
-      res.redirect("/");
-    });
-  } else {
-    res.redirect("/");
-  }
-});
-
-app.post("/delete", function (req, res) {
-  const checkedItemId = req.body.checkbox;
-  Task.findByIdAndRemove(checkedItemId, function (err) {
-    if (!err) {
-      console.log("Successfully deleted checked item.");
-      res.redirect("/");
-    }
-  });
-});
 
 app.listen(process.env.PORT || 3000, function () {
   console.log("Server running at port 3000");
